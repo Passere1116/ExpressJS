@@ -4,20 +4,20 @@ var router = express.Router();
 // Rota principal para renderizar nossa lista
 router.get('/', (req, res) => {
     // 3. Dados dinâmicos (nosso vetor de elementos)
-    const meusItens = [
-      { id: 1, nome: 'Item Alfa', descricao: 'Descrição detalhada do Item Alfa.' },
-      { id: 2, nome: 'Item Beta', descricao: 'O segundo item da nossa lista dinâmica.' },
-      { id: 3, nome: 'Item Gama', descricao: 'Terceiro e último item exemplo.' },
-      { id: 4, nome: 'Item Delta', descricao: 'Mais um item para testar.' }
+    const meusProdutos = [
+      { id: 1, nome: 'chocolate', preço: '5' },
+      { id: 2, nome: 'batata frita', preço: '18' },
+      { id: 3, nome: 'hamburguer', preço: '38' },
+      { id: 4, nome: 'pizza', preço: '45' }
     ];
   
     // 4. Renderizar a view 'lista.ejs' passando os dados
     // O segundo argumento de res.render() é um objeto.
     // As chaves desse objeto (ex: 'titulo', 'itensParaView') se tornam
     // variáveis disponíveis dentro do template EJS.
-    res.render('lista', {
-      titulo: 'Minha Lista Dinâmica',
-      itensParaView: meusItens // Passando o array para a view
+    res.render('usuarios', {
+      titulo: 'Meus produtos',
+      produtosParaView: meusProdutos // Passando o array para a view
     });
   });
 
